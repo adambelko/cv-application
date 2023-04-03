@@ -1,3 +1,6 @@
+$header-bg: #7f7f7f;
+$page-bg: #f0f0f0;
+
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +11,80 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
     height: 100%;
-    background: #f0f0f0;
+    background: $page-bg;
 }
 
 header {
     display: flex;
     justify-content: center;
+    background: $header-bg;
+    color: #ffffff;
     font-weight: bold;
-    font-size: 3.8rem;
-    margin-top: 2rem;
+    font-size: 3.2rem;
+    padding: 1.2rem 0;
 }
 
 // Main 
-
-main {
+main,
+.main__cv-wrapper {
     display: flex;
+    gap: 3rem;
+    margin: auto;
+    margin-top: 1rem;
+    min-height: 50vh;
+}
+
+.main__cv--form {
+    display: flex;
+    width: 30vw;
+    padding: 2rem;
+    border: 0.2rem solid black;
+    border-radius: 0.7rem;
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.4rem;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    input {
+        font-size: 1.6rem;
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+        border-radius: 0.6rem;
+    }
+}
+
+.main__cv--preview {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    border: 0.2rem solid black;
+    border-radius: 0.7rem;
+    padding: 2rem;
+   
+    .cv-preview-inner-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 3.5rem;
+        font-size: 3rem;
+        color: #ffffff;
+        background: black;
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .cv-preview-sub-header {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+    }
 }
