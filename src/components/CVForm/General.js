@@ -1,11 +1,11 @@
-const GeneralInfo = ({ handleChangeGeneral }) => {
+const GeneralInfo = ({ onChangeGeneral }) => {
     return (
         <section>
             <h2>General Information</h2>
             {/* Full name */}
             <label htmlFor="input--fullName"></label>
             <input
-                onChange={handleChangeGeneral}
+                onChange={onChangeGeneral}
                 type="text"
                 id="input--fullName"
                 placeholder="Full name"
@@ -14,7 +14,7 @@ const GeneralInfo = ({ handleChangeGeneral }) => {
             {/* Email */}
             <label htmlFor="input--email"></label>
             <input
-                onChange={handleChangeGeneral}
+                onChange={onChangeGeneral}
                 type="text"
                 id="input--email"
                 placeholder="Email"
@@ -23,7 +23,7 @@ const GeneralInfo = ({ handleChangeGeneral }) => {
             {/* Phone */}
             <label htmlFor="input--phone"></label>
             <input
-                onChange={handleChangeGeneral}
+                onChange={onChangeGeneral}
                 type="number"
                 id="input--phone"
                 placeholder="Phone"
@@ -32,7 +32,7 @@ const GeneralInfo = ({ handleChangeGeneral }) => {
             {/* Address */}
             <label htmlFor="input--address"></label>
             <input
-                onChange={handleChangeGeneral}
+                onChange={onChangeGeneral}
                 type="text"
                 id="input--address"
                 placeholder="Address"

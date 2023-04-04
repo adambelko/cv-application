@@ -1,9 +1,11 @@
+import Experience from "./Experience";
 import General from "./General";
 
-const CVPreview = ({ general }) => {
+const CVPreview = ({ cv }) => {
     return (
         <div className="main__cv--preview">
-            <General general={general} />
+            <General cv={cv} />
+            <Experience cv={cv} />
         </div>
     );
 };

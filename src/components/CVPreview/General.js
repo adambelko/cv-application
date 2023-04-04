@@ -1,14 +1,16 @@
-const General = ({ general }) => {
+const General = ({ cv }) => {
     return (
         <>
-            <div className="cv-preview-inner-header">{general.fullName}</div>
+            <div className="cv-preview-inner-header">
+                {cv.generalInfo.fullName}
+            </div>
             <div className="cv-preview-sub-header">
                 {"Email: "}
-                {general.email} {" | "}
+                {cv.generalInfo.email} {" | "}
                 {"Phone: "}
-                {general.phone} {" | "}
+                {cv.generalInfo.phone} {" | "}
                 {"Address: "}
-                {general.address}
+                {cv.generalInfo.address}
             </div>
         </>
     );

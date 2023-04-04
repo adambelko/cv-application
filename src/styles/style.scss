@@ -31,11 +31,12 @@ main,
     gap: 3rem;
     margin: auto;
     margin-top: 1rem;
-    min-height: 50vh;
+    min-height: 80vh;
 }
 
 .main__cv--form {
     display: flex;
+    flex-direction: column;
     width: 30vw;
     padding: 2rem;
     border: 0.2rem solid black;
@@ -59,12 +60,18 @@ main,
         margin-bottom: 1rem;
         border-radius: 0.6rem;
     }
+
+    .cv-form-skills {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .main__cv--preview {
     display: flex;
     flex-direction: column;
     width: 30vw;
+    padding: 2rem;
     border: 0.2rem solid black;
     border-radius: 0.7rem;
     padding: 2rem;
@@ -87,4 +94,9 @@ main,
         margin-top: 0.5rem;
         font-size: 1.6rem;
     }
+
+    .cv-preview-skills {
+        margin-left: 1rem;
+    }
 }
+
