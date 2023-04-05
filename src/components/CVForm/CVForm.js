@@ -3,7 +3,6 @@ import GeneralInfo from "./General";
 
 const CVForm = ({
     onChangeGeneral,
-    onChangeSummary,
     onChangeSkill,
     onChangeExistingSkill,
     onClickAddSkill,
@@ -15,7 +14,6 @@ const CVForm = ({
         <form className="main__cv--form">
             <GeneralInfo onChangeGeneral={onChangeGeneral} />
             <Experience
-                onChangeSummary={onChangeSummary}
                 onChangeSkill={onChangeSkill}
                 onChangeExistingSkill={onChangeExistingSkill}
                 onClickAddSkill={onClickAddSkill}

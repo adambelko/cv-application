@@ -4,9 +4,9 @@ export const emptyCV = {
         email: "",
         phone: "",
         address: "",
+        professionalSummary: "",
     },
     workExperience: {
-        professionalSummary: "",
         skills: [],
         pastEmployment: [],
     },

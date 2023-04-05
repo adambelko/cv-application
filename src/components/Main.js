@@ -16,16 +16,6 @@ const Main = () => {
         });
     };
 
-    const handleChangeSummary = (e) => {
-        setCV({
-            ...cv,
-            workExperience: {
-                ...cv.workExperience,
-                professionalSummary: e.target.value,
-            },
-        });
-    };
-
     const handleChangeSkill = (e) => {
         setSkill({ id: uniqid(), name: e.target.value });
     };
@@ -78,7 +68,6 @@ const Main = () => {
             <div className="main__cv-wrapper">
                 <CVForm
                     onChangeGeneral={handleChangeGeneral}
-                    onChangeSummary={handleChangeSummary}
                     onChangeSkill={handleChangeSkill}
                     onChangeExistingSkill={handleChangeExistingSkill}
                     onClickAddSkill={addSkill}

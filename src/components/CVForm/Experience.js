@@ -1,5 +1,4 @@
 const Experience = ({
-    onChangeSummary,
     onChangeSkill,
     onChangeExistingSkill,
     onClickAddSkill,
@@ -11,15 +10,6 @@ const Experience = ({
 
     return (
         <section>
-            <label htmlFor="professionalSummary">
-                <h2>Professional Summary</h2>
-            </label>
-            <textarea
-                onChange={onChangeSummary}
-                name="professionalSummary"
-                id="professionalSummary"
-                rows="4"
-            ></textarea>
             <label htmlFor="skills">
                 <h2>Skills</h2>
             </label>

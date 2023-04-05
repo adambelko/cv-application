@@ -12,6 +12,10 @@ const General = ({ cv }) => {
                 {"Address: "}
                 {cv.generalInfo.address}
             </div>
+            <h2>Professional Summary</h2>
+            <p className="cv-preview-professional-summary">
+                {cv.generalInfo.professionalSummary}
+            </p>
         </>
     );
 };

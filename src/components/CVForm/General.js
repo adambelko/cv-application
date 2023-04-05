@@ -38,6 +38,15 @@ const GeneralInfo = ({ onChangeGeneral }) => {
                 placeholder="Address"
                 name="address"
             />
+            {/* Professional Summary */}
+            <label htmlFor="input--professional-summary"></label>
+            <textarea
+                onChange={onChangeGeneral}
+                id="input--professional-summary"
+                rows="4"
+                placeholder="Proffesional Summary"
+                name="professionalSummary"
+            ></textarea>
         </section>
     );
 };
