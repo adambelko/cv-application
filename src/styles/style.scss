@@ -20,7 +20,7 @@ header {
     background: $header-bg;
     color: #ffffff;
     font-weight: bold;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
     padding: 1.2rem 0;
 }
 
@@ -82,9 +82,8 @@ main,
         align-items: center;
         min-height: 3.5rem;
         font-size: 3rem;
-        color: #ffffff;
-        background: black;
         padding: 1.5rem;
+        border: 0.5rem solid black;
         border-radius: 0.8rem;
     }
 

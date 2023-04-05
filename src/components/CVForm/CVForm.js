@@ -5,6 +5,7 @@ const CVForm = ({
     onChangeGeneral,
     onChangeSummary,
     onChangeSkill,
+    onChangeExistingSkill,
     onClickAddSkill,
     handleRemoveSkill,
     skill,
@@ -16,6 +17,7 @@ const CVForm = ({
             <Experience
                 onChangeSummary={onChangeSummary}
                 onChangeSkill={onChangeSkill}
+                onChangeExistingSkill={onChangeExistingSkill}
                 onClickAddSkill={onClickAddSkill}
                 handleRemoveSkill={handleRemoveSkill}
                 skill={skill}

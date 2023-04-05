@@ -1,54 +1,57 @@
 const Experience = ({
     onChangeSummary,
     onChangeSkill,
+    onChangeExistingSkill,
     onClickAddSkill,
     handleRemoveSkill,
     skill,
     cv,
 }) => {
-    // let skillsList = [];
-    const {
-        experience: { skills: skillsList },
-    } = cv;
+    const skillList = cv.workExperience.skills;
 
     return (
         <section>
-            <label htmlFor="summary">
+            <label htmlFor="professionalSummary">
                 <h2>Professional Summary</h2>
             </label>
             <textarea
                 onChange={onChangeSummary}
-                name="summary"
-                id="summary"
+                name="professionalSummary"
+                id="professionalSummary"
                 rows="4"
             ></textarea>
             <label htmlFor="skills">
                 <h2>Skills</h2>
             </label>
-            {console.log(skillsList)}
             <div className="cv-form-skills">
-                {/* Dynamically created skills */}
-                {skillsList.map((skill) => (
-                    <ul key={skill.id}>
-                        <input
-                            type="text"
-                            value={skill.skill}
-                            onChange={onChangeSkill}
-                        />
-                        <button onClick={() => handleRemoveSkill(skill.id)}>
-                            Remove
-                        </button>
-                    </ul>
-                ))}
-                {/* Input and button for adding a skill */}
+                <ul>
+                    {skillList.map((s) => (
+                        <li key={s.id}>
+                            <input
+                                type="text"
+                                value={s.name}
+                                onChange={(e) => onChangeExistingSkill(e, s.id)}
+                            />
+                            <button onClick={() => handleRemoveSkill(s.id)}>
+                                Remove
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Input and button for adding new skill */}
                 <input
                     onChange={onChangeSkill}
-                    value={skill}
+                    value={skill.name}
                     type="text"
                     name="skills"
                     id="skills"
                 />
-                <button onClick={onClickAddSkill} className="cv-form-add-skill">
+                <button
+                    onClick={onClickAddSkill}
+                    className="cv-form-add-skill"
+                    type="button"
+                >
                     Add
                 </button>
             </div>

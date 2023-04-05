@@ -5,18 +5,10 @@ export const emptyCV = {
         phone: "",
         address: "",
     },
-    experience: {
-        summary: "",
+    workExperience: {
+        professionalSummary: "",
         skills: [],
-        workExp: {
-            employer: "",
-            position: "",
-        },
+        pastEmployment: [],
     },
-    education: [
-        {
-            schoolName: "",
-            degree: "",
-        },
-    ],
+    education: [],
 };
