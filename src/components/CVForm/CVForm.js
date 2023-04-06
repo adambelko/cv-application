@@ -1,11 +1,15 @@
 import GeneralInfo from "./General";
 import Skills from "./Skills";
+import QualificationSummary from "./QualificationSummary.js";
 
 const CVForm = ({
     handleChangeGeneral,
     handleChangeSkill,
     handleAddSkill,
     handleRemoveSkill,
+    handleChangeQualification,
+    handleAddQualification,
+    handleRemoveQualification,
     cv,
 }) => {
     return (
@@ -16,6 +20,12 @@ const CVForm = ({
                 addSkill={handleAddSkill}
                 removeSkill={handleRemoveSkill}
                 skillList={cv.skills}
+            />
+            <QualificationSummary
+                changeQualification={handleChangeQualification}
+                addQualification={handleAddQualification}
+                removeQualification={handleRemoveQualification}
+                qualificationList={cv.qualificationSummary}
             />
         </form>
     );

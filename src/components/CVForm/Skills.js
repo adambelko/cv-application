@@ -1,4 +1,4 @@
-import SkillInput from "./SkillInput";
+import SingleInput from "./SingleInput";
 
 const Skills = ({ changeSkill, addSkill, removeSkill, skillList }) => {
     return (
@@ -8,19 +8,15 @@ const Skills = ({ changeSkill, addSkill, removeSkill, skillList }) => {
             </label>
             <div className="cv-form-skills">
                 {skillList.map((skill) => (
-                    <SkillInput
+                    <SingleInput
                         id={skill.id}
                         key={skill.id}
                         name={skill.name}
-                        changeSkill={changeSkill}
-                        removeSkill={removeSkill}
+                        change={changeSkill}
+                        remove={removeSkill}
                     />
                 ))}
-                <button
-                    onClick={addSkill}
-                    className="cv-form-add-skill"
-                    type="button"
-                >
+                <button onClick={addSkill} type="button">
                     Add
                 </button>
             </div>

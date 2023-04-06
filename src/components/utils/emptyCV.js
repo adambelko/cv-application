@@ -9,6 +9,6 @@ export const emptyCV = {
         professionalSummary: "",
     },
     skills: [{ id: uniqid(), name: "" }],
-    workExperience: [],
-    education: [],
+    qualificationSummary: [{ id: uniqid(), name: "" }],
+    workExperience: [{ id: uniqid(), position: "", addInfo: "" }],
 };

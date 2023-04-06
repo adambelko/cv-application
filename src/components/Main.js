@@ -14,6 +14,7 @@ const Main = () => {
         });
     };
 
+    // Skills
     const handleChangeSkill = (e, id) => {
         setCV({
             ...cv,
@@ -32,6 +33,36 @@ const Main = () => {
         setCV({ ...cv, skills: cv.skills.filter((skill) => skill.id !== id) });
     };
 
+    // Qualification
+    const handleChangeQualification = (e, id) => {
+        setCV({
+            ...cv,
+            qualificationSummary: cv.qualificationSummary.map((q) =>
+                q.id === id ? { ...q, name: e.target.value } : q
+            ),
+        });
+    };
+
+    const handleAddQualification = (e) => {
+        const id = uniqid();
+        setCV({
+            ...cv,
+            qualificationSummary: [
+                ...cv.qualificationSummary,
+                { id: id, name: "" },
+            ],
+        });
+    };
+
+    const handleRemoveQualification = (id) => {
+        setCV({
+            ...cv,
+            qualificationSummary: cv.qualificationSummary.filter(
+                (q) => q.id !== id
+            ),
+        });
+    };
+
     return (
         <main>
             <div className="main__cv-wrapper">
@@ -40,9 +71,11 @@ const Main = () => {
                     handleChangeSkill={handleChangeSkill}
                     handleAddSkill={handleAddSkill}
                     handleRemoveSkill={handleRemoveSkill}
+                    handleChangeQualification={handleChangeQualification}
+                    handleAddQualification={handleAddQualification}
+                    handleRemoveQualification={handleRemoveQualification}
                     cv={cv}
                 />
-                {console.log(cv)}
                 <CVPreview cv={cv} />
             </div>
         </main>
