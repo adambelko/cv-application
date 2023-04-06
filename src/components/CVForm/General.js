@@ -1,11 +1,11 @@
-const GeneralInfo = ({ onChangeGeneral }) => {
+const GeneralInfo = ({ changeGeneral }) => {
     return (
         <section>
             <h2>General Information</h2>
             {/* Full name */}
             <label htmlFor="input--fullName"></label>
             <input
-                onChange={onChangeGeneral}
+                onChange={changeGeneral}
                 type="text"
                 id="input--fullName"
                 placeholder="Full name"
@@ -14,7 +14,7 @@ const GeneralInfo = ({ onChangeGeneral }) => {
             {/* Email */}
             <label htmlFor="input--email"></label>
             <input
-                onChange={onChangeGeneral}
+                onChange={changeGeneral}
                 type="text"
                 id="input--email"
                 placeholder="Email"
@@ -23,7 +23,7 @@ const GeneralInfo = ({ onChangeGeneral }) => {
             {/* Phone */}
             <label htmlFor="input--phone"></label>
             <input
-                onChange={onChangeGeneral}
+                onChange={changeGeneral}
                 type="number"
                 id="input--phone"
                 placeholder="Phone"
@@ -32,7 +32,7 @@ const GeneralInfo = ({ onChangeGeneral }) => {
             {/* Address */}
             <label htmlFor="input--address"></label>
             <input
-                onChange={onChangeGeneral}
+                onChange={changeGeneral}
                 type="text"
                 id="input--address"
                 placeholder="Address"
@@ -41,7 +41,7 @@ const GeneralInfo = ({ onChangeGeneral }) => {
             {/* Professional Summary */}
             <label htmlFor="input--professional-summary"></label>
             <textarea
-                onChange={onChangeGeneral}
+                onChange={changeGeneral}
                 id="input--professional-summary"
                 rows="4"
                 placeholder="Proffesional Summary"

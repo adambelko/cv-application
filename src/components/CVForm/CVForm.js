@@ -1,25 +1,21 @@
-import Experience from "./Experience";
 import GeneralInfo from "./General";
+import Skills from "./Skills";
 
 const CVForm = ({
-    onChangeGeneral,
-    onChangeSkill,
-    onChangeExistingSkill,
-    onClickAddSkill,
+    handleChangeGeneral,
+    handleChangeSkill,
+    handleAddSkill,
     handleRemoveSkill,
-    skill,
     cv,
 }) => {
     return (
         <form className="main__cv--form">
-            <GeneralInfo onChangeGeneral={onChangeGeneral} />
-            <Experience
-                onChangeSkill={onChangeSkill}
-                onChangeExistingSkill={onChangeExistingSkill}
-                onClickAddSkill={onClickAddSkill}
-                handleRemoveSkill={handleRemoveSkill}
-                skill={skill}
-                cv={cv}
+            <GeneralInfo changeGeneral={handleChangeGeneral} />
+            <Skills
+                changeSkill={handleChangeSkill}
+                addSkill={handleAddSkill}
+                removeSkill={handleRemoveSkill}
+                skillList={cv.skills}
             />
         </form>
     );

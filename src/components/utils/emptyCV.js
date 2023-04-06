@@ -1,3 +1,5 @@
+import uniqid from "uniqid";
+
 export const emptyCV = {
     generalInfo: {
         fullName: "",
@@ -6,9 +8,7 @@ export const emptyCV = {
         address: "",
         professionalSummary: "",
     },
-    workExperience: {
-        skills: [],
-        pastEmployment: [],
-    },
+    skills: [{ id: uniqid(), name: "" }],
+    workExperience: [],
     education: [],
 };

@@ -6,8 +6,6 @@ import { emptyCV } from "./utils/emptyCV";
 
 const Main = () => {
     const [cv, setCV] = useState(emptyCV);
-    const [skill, setSkill] = useState({ id: "", name: "" });
-    const [skills, setSkills] = useState([]);
 
     const handleChangeGeneral = (e) => {
         setCV({
@@ -16,66 +14,36 @@ const Main = () => {
         });
     };
 
-    const handleChangeSkill = (e) => {
-        setSkill({ id: uniqid(), name: e.target.value });
-    };
-
-    const handleChangeExistingSkill = (e, id) => {
-        // find object - skill, that match with the id like example below
-        const test = skills.map((s) => {
-            if (s.id === id) return (s.name = e.target.value);
-        });
-
-        // And need to change "name" value inside of it,
-        // then update setSkills() and setCV()
-
-        // setCV({
-        //     ...cv,
-        //     workExperience: {
-        //         ...cv.workExperience,
-        //         skills: updatedSkills,
-        //     },
-        // });
-    };
-
-    const addSkill = (e) => {
-        const updatedSkills = [...skills, skill];
-        setSkills(updatedSkills);
+    const handleChangeSkill = (e, id) => {
         setCV({
             ...cv,
-            workExperience: {
-                ...cv.workExperience,
-                skills: updatedSkills,
-            },
+            skills: cv.skills.map((skill) =>
+                skill.id === id ? { ...skill, name: e.target.value } : skill
+            ),
         });
-        setSkill({ id: "", name: "" });
     };
 
-    const removeSkill = (id) => {
-        const updatedSkills = skills.filter((s) => s.id !== id);
-        setSkills(updatedSkills);
-        setCV({
-            ...cv,
-            workExperience: {
-                ...cv.workExperience,
-                skills: updatedSkills,
-            },
-        });
+    const handleAddSkill = (e) => {
+        const id = uniqid();
+        setCV({ ...cv, skills: [...cv.skills, { id: id, name: "" }] });
+    };
+
+    const handleRemoveSkill = (id) => {
+        setCV({ ...cv, skills: cv.skills.filter((skill) => skill.id !== id) });
     };
 
     return (
         <main>
             <div className="main__cv-wrapper">
                 <CVForm
-                    onChangeGeneral={handleChangeGeneral}
-                    onChangeSkill={handleChangeSkill}
-                    onChangeExistingSkill={handleChangeExistingSkill}
-                    onClickAddSkill={addSkill}
-                    handleRemoveSkill={removeSkill}
-                    skill={skill}
+                    handleChangeGeneral={handleChangeGeneral}
+                    handleChangeSkill={handleChangeSkill}
+                    handleAddSkill={handleAddSkill}
+                    handleRemoveSkill={handleRemoveSkill}
                     cv={cv}
                 />
-                <CVPreview cv={cv} skill={skill} />
+                {console.log(cv)}
+                <CVPreview cv={cv} />
             </div>
         </main>
     );
