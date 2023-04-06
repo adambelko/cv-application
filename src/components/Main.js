@@ -63,6 +63,33 @@ const Main = () => {
         });
     };
 
+    const handleChangeWorkExperience = (e) => {
+        const { name, id } = e.target;
+        setCV({
+            ...cv,
+            workExperience: cv.workExperience.map((exp) =>
+                exp.id === id ? { ...exp, [name]: e.target.value } : exp
+            ),
+        });
+    };
+
+    const handleAddWorkExperience = () => {
+        setCV({
+            ...cv,
+            workExperience: [
+                ...cv.workExperience,
+                { id: uniqid(), position: "", addInfo: "" },
+            ],
+        });
+    };
+
+    const handleRemoveWorkExperience = (id) => {
+        setCV({
+            ...cv,
+            workExperience: cv.workExperience.filter((exp) => exp.id !== id),
+        });
+    };
+
     return (
         <main>
             <div className="main__cv-wrapper">
@@ -74,6 +101,9 @@ const Main = () => {
                     handleChangeQualification={handleChangeQualification}
                     handleAddQualification={handleAddQualification}
                     handleRemoveQualification={handleRemoveQualification}
+                    handleChangeWorkExperience={handleChangeWorkExperience}
+                    handleAddWorkExperience={handleAddWorkExperience}
+                    handleRemoveWorkExperience={handleRemoveWorkExperience}
                     cv={cv}
                 />
                 <CVPreview cv={cv} />
