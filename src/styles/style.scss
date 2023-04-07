@@ -31,14 +31,16 @@ main,
     display: flex;
     gap: 3rem;
     margin: auto;
+    margin-bottom: 2rem;
 }
 
 .main__cv--form {
-    background: $form-bg;
     display: flex;
+    justify-content: space-around;
+    background: $form-bg;
     flex-direction: column;
+    height: 100rem;
     width: 30vw;
-    height: 81rem;
     overflow-y: auto;
     padding: 2.5rem;
     border-radius: 0.7rem;
@@ -54,7 +56,6 @@ main,
         margin-bottom: 0.6rem;
     }
 
-
     input,
     textarea {
         font-size: 1.6rem;
@@ -63,6 +64,7 @@ main,
         margin-bottom: 1rem;
         border: none;
         border-radius: 0.6rem;
+
         &:last-child {
             margin-bottom: 0rem;
         }
@@ -83,6 +85,7 @@ main,
         padding: 0.4rem;
         border: none;
         border-radius: 0.6rem;
+
         &:last-child {
             margin-bottom: 0rem;
         }
@@ -91,6 +94,36 @@ main,
             transition: all 0.05s ease-in-out;
             transform: scale(1.01);
             background-color: #ef8d47;
+        }
+    }
+    
+    .form-button-wrapper {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
+        
+        button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 0rem;
+        }
+
+        .form-reset-btn{
+            background-color: #fc6945;
+            &:hover {
+                transition: all 0.05s ease-in-out;
+                transform: scale(1.01);
+                background-color: #fd5429;
+            }
+        }
+
+        .form-download-btn {
+            background-color: #6CC6A5;
+            &:hover {
+                transition: all 0.05s ease-in-out;
+                transform: scale(1.01);
+                background-color: #64b798;
+            }
         }
     }
 
@@ -131,7 +164,6 @@ main,
         justify-content: center;
         margin-top: 1rem;
         font-size: 1.4rem;
-        // margin-bottom: 1rem;
     }
 
     h2 {

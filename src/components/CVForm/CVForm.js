@@ -14,6 +14,7 @@ const CVForm = ({
     handleChangeWorkExperience,
     handleAddWorkExperience,
     handleRemoveWorkExperience,
+    handleResetForm,
     cv,
 }) => {
     return (
@@ -37,6 +38,12 @@ const CVForm = ({
                 removeWorkExperience={handleRemoveWorkExperience}
                 workExpList={cv.workExperience}
             />
+            <div className="form-button-wrapper">
+                <button className="form-reset-btn" onClick={handleResetForm}>
+                    Reset Form
+                </button>
+                <button className="form-download-btn">Download PDF</button>
+            </div>
         </form>
     );
 };

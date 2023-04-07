@@ -90,6 +90,8 @@ const Main = () => {
         });
     };
 
+    const handleResetForm = () => setCV(emptyCV);
+
     return (
         <main>
             <div className="main__cv-wrapper">
@@ -104,6 +106,7 @@ const Main = () => {
                     handleChangeWorkExperience={handleChangeWorkExperience}
                     handleAddWorkExperience={handleAddWorkExperience}
                     handleRemoveWorkExperience={handleRemoveWorkExperience}
+                    handleResetForm={handleResetForm}
                     cv={cv}
                 />
                 <CVPreview cv={cv} />
