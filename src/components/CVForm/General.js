@@ -1,6 +1,6 @@
 const GeneralInfo = ({ changeGeneral }) => {
     return (
-        <section>
+        <section className="form-general-information">
             <h2>General Information</h2>
             {/* Full name */}
             <label htmlFor="input--fullName"></label>
@@ -44,7 +44,7 @@ const GeneralInfo = ({ changeGeneral }) => {
                 onChange={changeGeneral}
                 id="input--professional-summary"
                 rows="4"
-                placeholder="Proffesional Summary"
+                placeholder="Professional Summary"
                 name="professionalSummary"
             ></textarea>
         </section>

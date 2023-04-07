@@ -1,5 +1,7 @@
-$header-bg: #7f7f7f;
-$page-bg: #f0f0f0;
+$page-bg: #6CC6A5;
+$form-bg: #F9D163;
+$btn-bg: #F39550;
+$section-title: #0B5688;
 
 * {
     margin: 0;
@@ -17,7 +19,6 @@ html {
 header {
     display: flex;
     justify-content: center;
-    background: $header-bg;
     color: #ffffff;
     font-weight: bold;
     font-size: 2.7rem;
@@ -30,77 +31,128 @@ main,
     display: flex;
     gap: 3rem;
     margin: auto;
-    margin-top: 1rem;
-    min-height: 80vh;
 }
 
 .main__cv--form {
+    background: $form-bg;
     display: flex;
     flex-direction: column;
     width: 30vw;
-    padding: 2rem;
-    border: 0.2rem solid black;
+    height: 81rem;
+    overflow-y: auto;
+    padding: 2.5rem;
     border-radius: 0.7rem;
 
+    .form-general-information h2 {
+        margin-top: 0rem;
+    }   
+
     h2 {
+        color: $section-title;
         font-size: 2.2rem;
-        margin-bottom: 0.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0.6rem;
     }
 
-    section {
+
+    input,
+    textarea {
+        font-size: 1.6rem;
+        padding: 0.6rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 0.6rem;
+        &:last-child {
+            margin-bottom: 0rem;
+        }
+    }
+
+    .form-single-input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    button {
+        font-family: 'Roboto', sans-serif;
+        background-color: $btn-bg;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        padding: 0.4rem;
+        border: none;
+        border-radius: 0.6rem;
+        &:last-child {
+            margin-bottom: 0rem;
+        }
+
+        &:hover {
+            transition: all 0.05s ease-in-out;
+            transform: scale(1.01);
+            background-color: #ef8d47;
+        }
+    }
+
+    .form-general-information,
+    .form-skills,
+    .form-qualification-summary,
+    .form-work-experience {
         display: flex;
         flex-direction: column;
         width: 100%;
         font-weight: bold;
-    }
-
-    input {
-        font-size: 1.6rem;
-        padding: 0.6rem;
-        margin-bottom: 1rem;
-        border-radius: 0.6rem;
-    }
-
-    #input--professional-summary {
-        border: 0.2rem solid black;
-        border-radius: 0.6rem;
-    }
-
-    .cv-form-skills {
-        display: flex;
-        flex-direction: column;
     }
 }
 
 .main__cv--preview {
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
+    font-size: 1.4rem;
     width: 30vw;
-    padding: 2rem;
-    border: 0.2rem solid black;
+    padding: 3rem;
     border-radius: 0.7rem;
-    padding: 2rem;
    
-    .cv-preview-inner-header {
+    .preview-full-name {
         display: flex;
         justify-content: center;
+        background-color: #e5e7eb;
         align-items: center;
         min-height: 3.5rem;
         font-size: 3rem;
         padding: 1.5rem;
-        border: 0.5rem solid black;
+        border: 0.3rem solid #9ca3af;
         border-radius: 0.8rem;
     }
 
-    .cv-preview-sub-header {
+    .preview-details {
         display: flex;
         justify-content: center;
-        margin-top: 0.5rem;
-        font-size: 1.6rem;
+        margin-top: 1rem;
+        font-size: 1.4rem;
+        // margin-bottom: 1rem;
     }
 
-    .cv-preview-skills {
-        margin-left: 1rem;
+    h2 {
+        text-decoration: underline;
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    ul {
+        margin-left: 2rem;
+        margin-top: 0.8rem;
+    }
+
+    .preview-professional-summary {
+        min-height: 5rem;
+    }
+
+    .preview-wrapper {
+        display: flex;
+        justify-content: space-between;
+        min-height: 15rem
     }
 }
 

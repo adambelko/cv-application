@@ -1,8 +1,8 @@
 const WorkExperience = ({ cv }) => {
     return (
-        <>
+        <section>
             <h2>Work Experience</h2>
-            <ul className="cv-preview-work-experience">
+            <ul className="preview-work-experience">
                 {cv.workExperience.map((s) => (
                     <li key={s.id}>
                         {s.position}
@@ -10,7 +10,7 @@ const WorkExperience = ({ cv }) => {
                     </li>
                 ))}
             </ul>
-        </>
+        </section>
     );
 };
 

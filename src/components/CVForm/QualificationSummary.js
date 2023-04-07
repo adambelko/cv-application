@@ -7,24 +7,23 @@ const QualificationSummary = ({
     qualificationList,
 }) => {
     return (
-        <section>
+        <section className="form-qualification-summary">
             <label>
                 <h2>Summary of Qualification</h2>
             </label>
-            <div className="cv-form-qualification-summary">
-                {qualificationList.map((qualification) => (
-                    <SingleInput
-                        id={qualification.id}
-                        key={qualification.id}
-                        name={qualification.name}
-                        change={changeQualification}
-                        remove={removeQualification}
-                    />
-                ))}
-                <button onClick={addQualification} type="button">
-                    Add
-                </button>
-            </div>
+            {qualificationList.map((qualification) => (
+                <SingleInput
+                    id={qualification.id}
+                    key={qualification.id}
+                    name={qualification.name}
+                    placeholder={"Qualification"}
+                    change={changeQualification}
+                    remove={removeQualification}
+                />
+            ))}
+            <button onClick={addQualification} type="button">
+                Add
+            </button>
         </section>
     );
 };

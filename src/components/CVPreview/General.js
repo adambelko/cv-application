@@ -1,10 +1,8 @@
 const General = ({ cv }) => {
     return (
         <>
-            <div className="cv-preview-inner-header">
-                {cv.generalInfo.fullName}
-            </div>
-            <div className="cv-preview-sub-header">
+            <div className="preview-full-name">{cv.generalInfo.fullName}</div>
+            <div className="preview-details">
                 {"Email: "}
                 {cv.generalInfo.email} {" | "}
                 {"Phone: "}
@@ -13,7 +11,7 @@ const General = ({ cv }) => {
                 {cv.generalInfo.address}
             </div>
             <h2>Professional Summary</h2>
-            <p className="cv-preview-professional-summary">
+            <p className="preview-professional-summary">
                 {cv.generalInfo.professionalSummary}
             </p>
         </>
