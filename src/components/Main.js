@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import uniqid from "uniqid";
 import CVForm from "./CVForm/CVForm";
