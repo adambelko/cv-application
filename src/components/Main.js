@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useReactToPrint } from "react-to-print";
 import uniqid from "uniqid";
 import CVForm from "./CVForm/CVForm";
 import CVPreview from "./CVPreview/CVPreview";
@@ -6,6 +7,10 @@ import { emptyCV } from "./utils/emptyCV";
 
 const Main = () => {
     const [cv, setCV] = useState(emptyCV);
+    const cvPreviewRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => cvPreviewRef.current,
+    });
 
     const handleChangeGeneral = (e) => {
         setCV({
@@ -63,6 +68,7 @@ const Main = () => {
         });
     };
 
+    // Work Experience
     const handleChangeWorkExperience = (e) => {
         const { name, id } = e.target;
         setCV({
@@ -107,9 +113,10 @@ const Main = () => {
                     handleAddWorkExperience={handleAddWorkExperience}
                     handleRemoveWorkExperience={handleRemoveWorkExperience}
                     handleResetForm={handleResetForm}
+                    handlePrint={handlePrint}
                     cv={cv}
                 />
-                <CVPreview cv={cv} />
+                <CVPreview cv={cv} ref={cvPreviewRef} />
             </div>
         </main>
     );

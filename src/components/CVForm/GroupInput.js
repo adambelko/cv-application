@@ -17,7 +17,9 @@ const GroupInput = ({ position, addInfo, id, change, remove }) => {
                 placeholder="Additional Information"
                 onChange={change}
             />
-            <button onClick={() => remove(id)}>Delete</button>
+            <button type="button" onClick={() => remove(id)}>
+                Delete
+            </button>
         </>
     );
 };

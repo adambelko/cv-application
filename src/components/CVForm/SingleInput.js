@@ -7,7 +7,9 @@ const SingleInput = ({ name, placeholder, id, change, remove }) => {
                 placeholder={placeholder}
                 onChange={(e) => change(e, id)}
             />
-            <button onClick={() => remove(id)}>Delete</button>
+            <button type="button" onClick={() => remove(id)}>
+                Delete
+            </button>
         </div>
     );
 };

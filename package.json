@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "react-to-print": "^2.14.12",
     "sass": "^1.60.0",
     "uniqid": "^5.4.0"
   }
